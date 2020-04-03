@@ -21,7 +21,7 @@ class TestController extends Controller
     //mysql读库
     public function mysql2()
     {
-        $res=DB::table('nav')->where(['navid'=>1])->get()->toArray();
+        $res=DB::table('nav')->where(['navid'=>10])->get()->toArray();
         print_r($res);
     }
 }
