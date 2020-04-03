@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TestController extends Controller
+{
+    //mysql写库
+    public function mysql1()
+    {
+        $data=[
+            'navname'=>'中餐厅',
+        ];
+        $res=DB::table('nav')->insert($data);
+        echo '<hr>';
+        var_dump($res);
+    }
+
+    //mysql读库
+    public function mysql2()
+    {
+        $res=DB::table('nav')->where(['navid'=>1])->get()->toArray();
+        print_r($res);
+    }
+}

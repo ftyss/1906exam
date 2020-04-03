@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('/test')->group(function(){
+    Route::get('mysql1','TestController@mysql1');       //mysql写库
+    Route::get('mysql2','TestController@mysql2');       //mysql读库
+});
